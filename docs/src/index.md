@@ -2,9 +2,8 @@
 home: true
 heroImage: ./silvankohler.jpeg
 heroText: Hello, I am Silvan.
-test: asdfdf
-tagline: 
-actionText: Projects
+tagline: Information Technologist by Heart
+actionText: My Work
 actionLink: /projects/
 features:
 - title: Information Technologist
@@ -14,9 +13,9 @@ features:
 ---
 
 :::slot footer
-Made by Silvan Kohler with ❤️
+Made with ❤️ by Silvan Kohler
 
-[AGPLv3 licensed](./LICENSE.md) | Copyright © 2022-present [Silvan Kohler](mailto:silvankohler@protonmail.com)
+[AGPLv3 licensed](./LICENSE) | Copyright © 2022-present [Silvan Kohler](mailto:silvankohler@protonmail.com)
 
 [Source](https://github.com/SilvanKohler/SilvanKohler)
 :::

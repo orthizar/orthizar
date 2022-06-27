@@ -2,7 +2,7 @@
 title: silvankohler.com and silvankohler.ch
 lang: en-US
 type: project
-image: https://v1.vuepress.vuejs.org/hero.png
+image: 
 description: My website is running on the InterPlanetary File System.
 tags:
     - IPFS

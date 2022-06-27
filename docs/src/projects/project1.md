@@ -2,7 +2,7 @@
 title: IPFS Cluster
 lang: en-US
 type: project
-image: https://v1.vuepress.vuejs.org/hero.png
+image: 
 description: My IPFS Cluster running on Docker.
 tags:
     - IPFS

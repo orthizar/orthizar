@@ -29,12 +29,11 @@ export default {
 </script>
 <style scoped>
 .post-container {
-  display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 .post-card {
-  width: 600px;
+  width: auto;
   height: 150px;
   margin: 10px;
   border: 1px solid #ccc;
