@@ -9,6 +9,18 @@ Recognizing the importance of environmental sustainability, I have chosen to sup
 <img src="https://img.shields.io/ecologi/carbon/orthizar" alt="shields">
 </p>
 
+<picture>
+  <source
+    srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true&theme=dark"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true" />
+</picture>
+
 This collection primarily consists of experiments and ongoing projects. To help you navigate efficiently, I have compiled a list of notable projects worth your attention.
 
 - [**orthizar/businessnexus**](https://github.com/orthizar/businessnexus)
