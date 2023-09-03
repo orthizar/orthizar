@@ -2,33 +2,38 @@
   Welcome!
 </h2>
 <p align="center">
-Recognizing the importance of environmental sustainability, I have chosen to support reputable organizations and projects dedicated to planting trees
+
+</p>
+<p align="center">
+  <picture>
+    <source
+      srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true&theme=dark"
+      media="(prefers-color-scheme: dark)"
+    />
+    <source
+      srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true"
+      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+    />
+    <img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true" />
+  </picture>
+</p>
+<p align="center">
+Recognizing the importance of environmental sustainability, I have chosen to support reputable organizations and projects dedicated to planting trees.
 </p>
 <p align="center">
 <img src="https://img.shields.io/ecologi/trees/orthizar" alt="shields">
 <img src="https://img.shields.io/ecologi/carbon/orthizar" alt="shields">
 </p>
 
-<picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true&theme=dark"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=orthizar&hide_title=true&show_icons=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true" />
-</picture>
 
 This collection primarily consists of experiments and ongoing projects. To help you navigate efficiently, I have compiled a list of notable projects worth your attention.
 
-- [**orthizar/businessnexus**](https://github.com/orthizar/businessnexus)
+- [**orthizar/health**](https://github.com/orthizar/health)
   <br><br>
-  *Strategic business simulation game*
+  *Health of Silvan Kohler*
   <br><br>
-  With focus on realistic business management, players make critical decisions, adapt to market dynamics, and strive to outsmart competitors.
-  By mastering the art of entrepreneurship, players can rise to the top, conquer industries, and leave a lasting legacy in the world of business.
+  Visit [health.silvankohler.com](https://health.silvankohler.com) to monitor my essential health indicators, including glucose levels, heart rate, SpO2 (oxygen saturation), and respiration rate.
+  This project is dedicated to promoting proactive health management and offers a public-facing API that empowers developers to create their own applications using real-time sample data for a wide range of health metrics.
   <br><br>
   
 - [**orthizar/evolution**](https://github.com/orthizar/evolution)
@@ -51,9 +56,17 @@ This collection primarily consists of experiments and ongoing projects. To help 
   
 - [**orthizar/cellular-automata-fluid-simulation**](https://github.com/orthizar/cellular-automata-fluid-simulation)
   <br><br>
-  Cellular automata fluid simulation
+  *Cellular automata fluid simulation*
+  <br><br>
+  
   <br><br>
 
+- [**orthizar/businessnexus**](https://github.com/orthizar/businessnexus)
+  <br><br>
+  *Strategic business simulation game*
+  <br><br>
+  With focus on realistic business management, players make critical decisions, adapt to market dynamics, and strive to outsmart competitors.
+  By mastering the art of entrepreneurship, players can rise to the top, conquer industries, and leave a lasting legacy in the world of business.
   <br><br>
 
 
