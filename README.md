@@ -54,12 +54,14 @@ This collection primarily consists of experiments and ongoing projects. To help 
   and evolution can interact to shape the characteristics and behavior of living organisms.
   <br><br>
   
+<!-- 
 - [**orthizar/cellular-automata-fluid-simulation**](https://github.com/orthizar/cellular-automata-fluid-simulation)
   <br><br>
   *Cellular automata fluid simulation*
   <br><br>
   
   <br><br>
+-->
 
 - [**orthizar/businessnexus**](https://github.com/orthizar/businessnexus)
   <br><br>
