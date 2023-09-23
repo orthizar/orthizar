@@ -28,6 +28,15 @@ Recognizing the importance of environmental sustainability, I have chosen to sup
 
 This collection primarily consists of experiments and ongoing projects. To help you navigate efficiently, I have compiled a list of notable projects worth your attention.
 
+- [**orthizar/rosalind**](https://github.com/orthizar/rosalind)
+  <br><br>
+  *Common solutions for bioinformatics problems on Rosalind*
+  <br><br>
+  [Rosalind](https://rosalind.info/about) is a platform for learning bioinformatics and programming through problem solving.
+
+  This repository contains my solutions for a diverse range of bioinformatics problems on Rosalind, along with explanations in individual README files.
+  <br><br>
+
 - [**orthizar/health**](https://github.com/orthizar/health)
   <br><br>
   *Health of Silvan Kohler*
@@ -63,6 +72,7 @@ This collection primarily consists of experiments and ongoing projects. To help 
   <br><br>
 -->
 
+<!--
 - [**orthizar/businessnexus**](https://github.com/orthizar/businessnexus)
   <br><br>
   *Strategic business simulation game*
@@ -70,6 +80,7 @@ This collection primarily consists of experiments and ongoing projects. To help 
   With focus on realistic business management, players make critical decisions, adapt to market dynamics, and strive to outsmart competitors.
   By mastering the art of entrepreneurship, players can rise to the top, conquer industries, and leave a lasting legacy in the world of business.
   <br><br>
+-->
 
 
 Please keep in mind that while these projects are still in various stages of development and may not be fully realized or operational yet, they symbolize the spirit of exploration and innovation.
