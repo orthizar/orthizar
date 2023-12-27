@@ -18,11 +18,11 @@
   </picture>
 </p>
 <p align="center">
-Recognizing the importance of environmental sustainability, I have chosen to support reputable organizations and projects dedicated to planting trees.
+Recognizing the importance of environmental sustainability, I have chosen to <a href="https://ecologi.com/orthizar">support</a> reputable organizations and projects dedicated to planting trees.
 </p>
 <p align="center">
-<img src="https://img.shields.io/ecologi/trees/orthizar" alt="shields">
-<img src="https://img.shields.io/ecologi/carbon/orthizar" alt="shields">
+  <img src="https://img.shields.io/ecologi/trees/orthizar" alt="shields">
+  <img src="https://img.shields.io/ecologi/carbon/orthizar" alt="shields">
 </p>
 
 
