@@ -14,7 +14,7 @@
       srcset="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&hide_title=true&show_icons=true"
       media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
     />
-    <img src="https://github-readme-stats-orthizar.vercel.app/api?username=anuraghazra&show_icons=true" />
+    <img src="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&show_icons=true" />
   </picture>
 </p>
 <p align="center">
