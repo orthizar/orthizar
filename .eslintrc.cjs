@@ -1,15 +1,11 @@
-/**
- * This is intended to be a basic starting point for linting in your app.
- * It relies on recommended configs out of the box for simplicity, but you can
- * and should modify this configuration to best suit your team's needs.
- */
+const prettier = require('./.prettierrc.json');
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
@@ -21,29 +17,29 @@ module.exports = {
   },
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
 
   overrides: [
     // React
     {
-      files: ["**/*.{js,jsx,ts,tsx}"],
-      plugins: ["react", "jsx-a11y"],
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      plugins: ['react', 'jsx-a11y'],
       extends: [
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
+        'plugin:react/recommended',
+        'plugin:react/jsx-runtime',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
       ],
       settings: {
         react: {
-          version: "detect",
+          version: 'detect',
         },
-        formComponents: ["Form"],
+        formComponents: ['Form'],
         linkComponents: [
-          { name: "Link", linkAttribute: "to" },
-          { name: "NavLink", linkAttribute: "to" },
+          { name: 'Link', linkAttribute: 'to' },
+          { name: 'NavLink', linkAttribute: 'to' },
         ],
-        "import/resolver": {
+        'import/resolver': {
           typescript: {},
         },
       },
@@ -51,14 +47,14 @@ module.exports = {
 
     // Typescript
     {
-      files: ["**/*.{ts,tsx}"],
-      plugins: ["@typescript-eslint", "import"],
-      parser: "@typescript-eslint/parser",
+      files: ['**/*.{ts,tsx}'],
+      plugins: ['@typescript-eslint', 'import'],
+      parser: '@typescript-eslint/parser',
       settings: {
-        "import/internal-regex": "^~/",
-        "import/resolver": {
+        'import/internal-regex': '^~/',
+        'import/resolver': {
           node: {
-            extensions: [".ts", ".tsx"],
+            extensions: ['.ts', '.tsx'],
           },
           typescript: {
             alwaysTryTypes: true,
@@ -66,18 +62,21 @@ module.exports = {
         },
       },
       extends: [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
       ],
     },
 
     // Node
     {
-      files: [".eslintrc.js"],
+      files: ['.eslintrc.js'],
       env: {
         node: true,
       },
     },
   ],
+  rules: {
+    'prettier/prettier': ['error', prettier],
+  },
 };
