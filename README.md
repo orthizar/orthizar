@@ -25,12 +25,11 @@ Recognizing the importance of environmental sustainability, I have chosen to <a 
   <img src="https://img.shields.io/ecologi/carbon/orthizar" alt="shields">
 </p>
 
-
 This collection primarily consists of experiments and ongoing projects. To help you navigate efficiently, I have compiled a list of notable projects worth your attention.
 
 - [**orthizar/rosalind**](https://github.com/orthizar/rosalind)
   <br><br>
-  *Common solutions for bioinformatics problems on Rosalind*
+  _Common solutions for bioinformatics problems on Rosalind_
   <br><br>
   [Rosalind](https://rosalind.info/about) is a platform for learning bioinformatics and programming through problem solving.
 
@@ -39,15 +38,14 @@ This collection primarily consists of experiments and ongoing projects. To help 
 
 - [**orthizar/health**](https://github.com/orthizar/health)
   <br><br>
-  *Health of Silvan Kohler*
+  _Health of Silvan Kohler_
   <br><br>
   Visit [health.silvankohler.com](https://health.silvankohler.com) to monitor my essential health indicators, including glucose levels, heart rate, SpO2 (oxygen saturation), and respiration rate.
   This project is dedicated to promoting proactive health management and offers a public-facing API that empowers developers to create their own applications using real-time sample data for a wide range of health metrics.
   <br><br>
-  
 - [**orthizar/evolution**](https://github.com/orthizar/evolution)
   <br><br>
-  *Neuronal network evolution simulation using DNA*
+  _Neuronal network evolution simulation using DNA_
   <br><br>
   This is a simulation of evolution that focuses on DNA, neural networks, and the process of evolution.
   The entities in the simulation represent individuals in a population.
@@ -62,13 +60,13 @@ This collection primarily consists of experiments and ongoing projects. To help 
   and selective pressures on the behavior and adaptation of the entities. It serves as a simplified model of how DNA, neural networks,
   and evolution can interact to shape the characteristics and behavior of living organisms.
   <br><br>
-  
-<!-- 
+
+<!--
 - [**orthizar/cellular-automata-fluid-simulation**](https://github.com/orthizar/cellular-automata-fluid-simulation)
   <br><br>
   *Cellular automata fluid simulation*
   <br><br>
-  
+
   <br><br>
 -->
 
@@ -81,7 +79,6 @@ This collection primarily consists of experiments and ongoing projects. To help 
   By mastering the art of entrepreneurship, players can rise to the top, conquer industries, and leave a lasting legacy in the world of business.
   <br><br>
 -->
-
 
 Please keep in mind that while these projects are still in various stages of development and may not be fully realized or operational yet, they symbolize the spirit of exploration and innovation.
 
