@@ -4,7 +4,6 @@ import {
   SVGMotionProps,
   Variants,
   motion,
-  stagger,
 } from 'framer-motion';
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +17,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const staggerItems = stagger(1);
   return (
     <div className='flex flex-col min-h-screen'>
       <motion.header
@@ -30,6 +28,7 @@ export default function Index() {
         <motion.a
           className='flex items-center justify-center'
           href='#'
+          aria-label='home link'
           variants={pageLoadItemVariants(0.3)}
         >
           <SignatureIcon className='h-20 w-auto mr-2' />
@@ -39,7 +38,7 @@ export default function Index() {
           className='ml-auto flex gap-4 sm:gap-6'
           variants={pageLoadItemVariants(0.3)}
         >
-          <Link href='#projects'>Projects</Link>
+          <Link href='#projects' aria-label='projects navigation link'>Projects</Link>
         </motion.nav>
       </motion.header>
       <motion.main
@@ -71,8 +70,8 @@ export default function Index() {
                   className='max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
                   variants={pageLoadItemVariants(0.1)}
                 >
-                  I'm Silvan Kohler, a developer and IT enthusiast based in
-                  Switzerland. I'm passionate about technology and love to build
+                  I&apos;m Silvan Kohler, a developer and IT enthusiast based in
+                  Switzerland. I&apos;m passionate about technology and love to build
                   things. Currently building shiper.
                 </motion.p>
                 <br />
@@ -89,6 +88,7 @@ export default function Index() {
                   <Link
                     className='flex items-center gap-2'
                     href='https://github.com/orthizar'
+                    aria-label='github link'
                   >
                     <GithubIcon className='w-5 h-5' />
                     <span>GitHub</span>
@@ -96,6 +96,7 @@ export default function Index() {
                   <Link
                     className='flex items-center gap-2'
                     href='https://twitter.com/orthizar'
+                    aria-label='twitter link'
                   >
                     <TwitterIcon className='w-5 h-5' />
                     <span>Twitter</span>
@@ -123,10 +124,10 @@ export default function Index() {
           className='sm:ml-auto flex gap-4 sm:gap-6'
           variants={pageLoadItemVariants(0.3)}
         >
-          <Link href='https://github.com/orthizar' className='text-xs'>
+          <Link href='https://github.com/orthizar' aria-label='github link' className='text-xs'>
             GitHub
           </Link>
-          <Link href='https://twitter.com/orthizar' className='text-xs'>
+          <Link href='https://twitter.com/orthizar' aria-label='twitter link' className='text-xs'>
             Twitter
           </Link>
         </motion.nav>
@@ -189,12 +190,12 @@ function ProjectCard({
         {icon && <img src={icon} alt={title} className='w-5 h-5 my-auto' />}
         <h3 className='text-xl font-bold dark:text-white'>{title}</h3>
         {github && (
-          <Link href={github}>
+          <Link href={github} aria-label={`github link to project ${title}`}>
             <GithubIcon className='w-5 my-auto' />
           </Link>
         )}
         {website && (
-          <Link href={website}>
+          <Link href={website} aria-label={`website link to project ${title}`}>
             <WebsiteIcon className='w-5 my-auto' />
           </Link>
         )}
