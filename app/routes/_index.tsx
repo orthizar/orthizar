@@ -58,7 +58,8 @@ export default function Index() {
                 alt='Silvan Kohler'
                 className='rounded-full mx-auto'
                 width={300}
-                src='/me.jpeg'
+                height={300}
+                srcSet='/me.avif, /me.webp, /me.jpeg'
               />
               <motion.div
                 className='flex flex-col items-start space-y-4'
