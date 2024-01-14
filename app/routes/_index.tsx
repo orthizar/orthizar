@@ -1,12 +1,8 @@
-import { Image } from '@nextui-org/react';
 import type { MetaFunction } from '@remix-run/node';
 import {
   HTMLMotionProps,
-  MotionConfig,
-  MotionProps,
   SVGMotionProps,
   Variants,
-  delay,
   motion,
   stagger,
 } from 'framer-motion';
