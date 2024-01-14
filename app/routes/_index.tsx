@@ -38,7 +38,9 @@ export default function Index() {
           className='ml-auto flex gap-4 sm:gap-6'
           variants={pageLoadItemVariants(0.3)}
         >
-          <Link href='#projects' aria-label='projects navigation link'>Projects</Link>
+          <Link href='#projects' aria-label='projects navigation link'>
+            Projects
+          </Link>
         </motion.nav>
       </motion.header>
       <motion.main
@@ -71,8 +73,8 @@ export default function Index() {
                   variants={pageLoadItemVariants(0.1)}
                 >
                   I&apos;m Silvan Kohler, a developer and IT enthusiast based in
-                  Switzerland. I&apos;m passionate about technology and love to build
-                  things. Currently building shiper.
+                  Switzerland. I&apos;m passionate about technology and love to
+                  build things. Currently building shiper.
                 </motion.p>
                 <br />
                 <motion.p
@@ -124,10 +126,18 @@ export default function Index() {
           className='sm:ml-auto flex gap-4 sm:gap-6'
           variants={pageLoadItemVariants(0.3)}
         >
-          <Link href='https://github.com/orthizar' aria-label='github link' className='text-xs'>
+          <Link
+            href='https://github.com/orthizar'
+            aria-label='github link'
+            className='text-xs'
+          >
             GitHub
           </Link>
-          <Link href='https://twitter.com/orthizar' aria-label='twitter link' className='text-xs'>
+          <Link
+            href='https://twitter.com/orthizar'
+            aria-label='twitter link'
+            className='text-xs'
+          >
             Twitter
           </Link>
         </motion.nav>
@@ -214,7 +224,7 @@ function Link({
   return (
     <motion.a
       className='text-sm font-medium'
-      target='_blank'
+      target={props.href?.startsWith('http') ? '_blank' : undefined}
       initial={{
         borderBottom: '1px solid transparent',
         borderImage:
