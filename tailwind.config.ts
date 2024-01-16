@@ -1,5 +1,5 @@
-const { nextui } = require('@nextui-org/react');
-
+import { nextui } from '@nextui-org/react';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -8,7 +8,9 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
+    },
   },
   darkMode: 'class',
   plugins: [nextui()],

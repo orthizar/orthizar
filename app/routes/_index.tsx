@@ -5,6 +5,7 @@ import {
   Variants,
   motion,
 } from 'framer-motion';
+import { SVGProps } from 'react';
 export const meta: MetaFunction = () => {
   return [
     { title: 'Silvan Kohler' },
@@ -29,14 +30,14 @@ export default function Index() {
           className='flex items-center justify-center'
           href='#'
           aria-label='home link'
-          variants={pageLoadItemVariants(0.3)}
+          variants={pageLoadItemVariants()}
         >
           <SignatureIcon className='h-20 w-auto mr-2' />
           <span className='sr-only'>Silvan Kohler</span>
         </motion.a>
         <motion.nav
           className='ml-auto flex gap-4 sm:gap-6'
-          variants={pageLoadItemVariants(0.3)}
+          variants={pageLoadItemVariants()}
         >
           <Link href='#projects' aria-label='projects navigation link'>
             Projects
@@ -53,15 +54,19 @@ export default function Index() {
           <div className='px-4 md:px-6 space-y-10 xl:space-y-16'>
             <motion.div
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
-              variants={pageLoadItemVariants(0.5)}
+              variants={pageLoadItemVariants()}
             >
-              <motion.img
-                alt='Silvan Kohler'
-                className='rounded-full mx-auto'
-                width={300}
-                height={300}
-                srcSet='/me.avif, /me.webp, /me.jpeg'
-              />
+              <picture>
+                <source srcSet='/me.avif' type='image/avif' />
+                <source srcSet='/me.webp' type='image/webp' />
+                <img
+                  className='rounded-full mx-auto'
+                  alt='Silvan Kohler'
+                  width={300}
+                  height={300}
+                  src='/me.jpeg'
+                />
+              </picture>
               <motion.div
                 className='flex flex-col items-start space-y-4'
                 initial='initial'
@@ -69,8 +74,8 @@ export default function Index() {
                 variants={pageLoadVariants(0.5, 0.5, 0.3)}
               >
                 <motion.p
-                  className='max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
-                  variants={pageLoadItemVariants(0.1)}
+                  className='max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
+                  variants={pageLoadItemVariants()}
                 >
                   I&apos;m Silvan Kohler, a developer and IT enthusiast based in
                   Switzerland. I&apos;m passionate about technology and love to
@@ -78,14 +83,14 @@ export default function Index() {
                 </motion.p>
                 <br />
                 <motion.p
-                  className='max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
-                  variants={pageLoadItemVariants(0.1)}
+                  className='max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
+                  variants={pageLoadItemVariants()}
                 >
                   Feel free to send me a message and check out my
                 </motion.p>
                 <motion.div
                   className='flex gap-4'
-                  variants={pageLoadItemVariants(0.1)}
+                  variants={pageLoadItemVariants()}
                 >
                   <Link
                     className='flex items-center gap-2'
@@ -108,7 +113,7 @@ export default function Index() {
             </motion.div>
           </div>
         </section>
-        <ProjectSection variants={pageLoadItemVariants(0.5)} />
+        <ProjectSection variants={pageLoadItemVariants()} />
       </motion.main>
       <motion.footer
         className='flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-gray-800/40'
@@ -118,13 +123,13 @@ export default function Index() {
       >
         <motion.p
           className='text-xs dark:text-gray-400'
-          variants={pageLoadItemVariants(0.3)}
+          variants={pageLoadItemVariants()}
         >
           © 2024 Silvan Kohler. All rights reserved.
         </motion.p>
         <motion.nav
           className='sm:ml-auto flex gap-4 sm:gap-6'
-          variants={pageLoadItemVariants(0.3)}
+          variants={pageLoadItemVariants()}
         >
           <Link
             href='https://github.com/orthizar'
@@ -211,7 +216,9 @@ function ProjectCard({
         )}
       </div>
       <div className='card-content'>
-        <p className='text-gray-500 dark:text-gray-400'>{description}</p>
+        <p className='text-medium max-w-prose text-gray-500 dark:text-gray-400'>
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -262,7 +269,7 @@ const pageLoadVariants = (
   } as Variants;
 };
 
-const pageLoadItemVariants = (duration: number) => {
+const pageLoadItemVariants = () => {
   return {
     initial: {
       opacity: 0,
@@ -343,7 +350,7 @@ function SignatureIcon(props: SVGMotionProps<SVGSVGElement>) {
   );
 }
 
-function GithubIcon(props) {
+function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -363,7 +370,7 @@ function GithubIcon(props) {
   );
 }
 
-function TwitterIcon(props) {
+function TwitterIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -382,7 +389,7 @@ function TwitterIcon(props) {
   );
 }
 
-function WebsiteIcon(props) {
+function WebsiteIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
