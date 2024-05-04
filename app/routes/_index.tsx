@@ -77,9 +77,10 @@ export default function Index() {
                   className='max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
                   variants={pageLoadItemVariants()}
                 >
-                  I&apos;m Silvan Kohler, a developer and IT enthusiast based in
-                  Switzerland. I&apos;m passionate about technology and love to
-                  build things. Currently building shiper.
+                  I&apos;m Silvan Kohler, a developer, systems engineer and IT
+                  enthusiast based in Switzerland. I&apos;m passionate about
+                  technology and love to build things. Currently building
+                  shiper.
                 </motion.p>
                 <br />
                 <motion.p
@@ -107,6 +108,30 @@ export default function Index() {
                   >
                     <TwitterIcon className='w-5 h-5' />
                     <span>Twitter</span>
+                  </Link>
+                  <Link
+                    className='flex items-center gap-2'
+                    href='https://www.linkedin.com/in/silvankohler'
+                    aria-label='linkedin link'
+                  >
+                    <LinkedinIcon className='w-5 h-5' />
+                    <span>LinkedIn</span>
+                  </Link>
+                  <Link
+                    className='flex items-center gap-2'
+                    href='https://crepuscolo.silvankohler.com'
+                    aria-label='personal knowledge management link'
+                  >
+                    <PKMIcon className='w-5 h-5' />
+                    <span>PKM</span>
+                  </Link>
+                  <Link
+                    className='flex items-center gap-2'
+                    href='https://health.silvankohler.com'
+                    aria-label='health link'
+                  >
+                    <HealthIcon className='w-5 h-5' />
+                    <span>Health</span>
                   </Link>
                 </motion.div>
               </motion.div>
@@ -144,6 +169,27 @@ export default function Index() {
             className='text-xs'
           >
             Twitter
+          </Link>
+          <Link
+            href='https://www.linkedin.com/in/silvankohler'
+            aria-label='linkedin link'
+            className='text-xs'
+          >
+            LinkedIn
+          </Link>
+          <Link
+            href='https://crepuscolo.silvankohler.com'
+            aria-label='personal knowledge management link'
+            className='text-xs'
+          >
+            PKM
+          </Link>
+          <Link
+            href='https://health.silvankohler.com'
+            aria-label='health link'
+            className='text-xs'
+          >
+            Health
           </Link>
         </motion.nav>
       </motion.footer>
@@ -406,6 +452,62 @@ function WebsiteIcon(props: SVGProps<SVGSVGElement>) {
       <circle cx='12' cy='12' r='10' />
       <line x1='2' y1='12' x2='22' y2='12' />
       <path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z' />
+    </svg>
+  );
+}
+
+function HealthIcon(props: SVGProps<SVGSVGElement>) {
+  // Health icon is a heart icon
+  return (
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M1 9.5H7.43412C7.47409 9.5 7.51023 9.4762 7.526 9.43947L8.91178 6.21386C8.94645 6.13316 9.06087 6.13316 9.09554 6.21386L11.9257 12.8015C11.9593 12.8797 12.0692 12.8828 12.1071 12.8065L13.7496 9.5L14.5054 7.93629C14.5418 7.86097 14.649 7.86097 14.6854 7.93629L15.4139 9.44352C15.4306 9.47805 15.4656 9.5 15.5039 9.5H23M1 17H23M5 20V20.0318M9 20V20.0318M2 23H22C22.5523 23 23 22.5523 23 22V2C23 1.44772 22.5523 1 22 1H2C1.44772 1 1 1.44772 1 2V22C1 22.5523 1.44772 23 2 23Z' />
+    </svg>
+  );
+}
+
+function PKMIcon(props: SVGProps<SVGSVGElement>) {
+  // PKM icon is a book icon
+  return (
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M3 20L7 20M3 15H7M3 10H7M3 5H7M21 21.5L21 2.5C21 1.67157 20.3284 1 19.5 1L6.49998 1C5.67155 1 4.99998 1.67157 4.99998 2.5L4.99998 21.5C4.99998 22.3284 5.67155 23 6.49998 23L19.5 23C20.3284 23 21 22.3284 21 21.5ZM11 9H16C16.5523 9 17 8.55229 17 8V6C17 5.44772 16.5523 5 16 5H11C10.4477 5 10 5.44772 10 6V8C10 8.55229 10.4477 9 11 9Z' />
+    </svg>
+  );
+}
+
+function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='currentColor'
+      transform='scale(1.2)'
+    >
+      <path d='M 5 3 C 3.895 3 3 3.895 3 5 L 3 19 C 3 20.105 3.895 21 5 21 L 19 21 C 20.105 21 21 20.105 21 19 L 21 5 C 21 3.895 20.105 3 19 3 L 5 3 z M 5 5 L 19 5 L 19 19 L 5 19 L 5 5 z M 7.7792969 6.3164062 C 6.9222969 6.3164062 6.4082031 6.8315781 6.4082031 7.5175781 C 6.4082031 8.2035781 6.9223594 8.7167969 7.6933594 8.7167969 C 8.5503594 8.7167969 9.0644531 8.2035781 9.0644531 7.5175781 C 9.0644531 6.8315781 8.5502969 6.3164062 7.7792969 6.3164062 z M 6.4765625 10 L 6.4765625 17 L 9 17 L 9 10 L 6.4765625 10 z M 11.082031 10 L 11.082031 17 L 13.605469 17 L 13.605469 13.173828 C 13.605469 12.034828 14.418109 11.871094 14.662109 11.871094 C 14.906109 11.871094 15.558594 12.115828 15.558594 13.173828 L 15.558594 17 L 18 17 L 18 13.173828 C 18 10.976828 17.023734 10 15.802734 10 C 14.581734 10 13.930469 10.406562 13.605469 10.976562 L 13.605469 10 L 11.082031 10 z'></path>
     </svg>
   );
 }
