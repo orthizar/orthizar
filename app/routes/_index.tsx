@@ -39,7 +39,11 @@ export default function Index() {
           className='ml-auto flex gap-4 sm:gap-6'
           variants={pageLoadItemVariants()}
         >
-          <Link href='#projects' aria-label='projects navigation link'>
+          <Link
+            className='plausible-event-name=Navigation: Projects'
+            href='#projects'
+            aria-label='projects navigation link'
+          >
             Projects
           </Link>
         </motion.nav>
@@ -276,7 +280,7 @@ function Link({
 }: { children: React.ReactNode } & HTMLMotionProps<'a'>) {
   return (
     <motion.a
-      className='text-sm font-medium'
+      className={cn('text-sm font-medium', props.className)}
       target={props.href?.startsWith('http') ? '_blank' : undefined}
       initial={{
         borderBottom: '1px solid transparent',
@@ -293,6 +297,10 @@ function Link({
       {children}
     </motion.a>
   );
+}
+
+function cn(...classes: (string | boolean | undefined)[]) {
+  return classes.filter(Boolean).join(' ');
 }
 
 const pageLoadVariants = (
