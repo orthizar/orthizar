@@ -24,12 +24,7 @@ export default function App() {
         <script
           defer
           data-domain='silvankohler.com'
-          src='https://plausible.silvankohler.com/js/script.js'
-        ></script>
-        <script
-          defer
-          data-domain='silvankohler.com'
-          src='https://plausible.silvankohler.com/js/script.outbound-links.js'
+          src='https://plausible.silvankohler.com/js/script.tagged-events.outbound-links.js'
         ></script>
         <Meta />
         <Links />
