@@ -94,7 +94,7 @@ export default function Index() {
                   Feel free to send me a message and check out my
                 </motion.p>
                 <motion.div
-                  className='flex gap-4'
+                  className='flex gap-4 flex-wrap'
                   variants={pageLoadItemVariants()}
                 >
                   <Link
