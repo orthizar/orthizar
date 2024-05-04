@@ -40,7 +40,7 @@ export default function Index() {
           variants={pageLoadItemVariants()}
         >
           <Link
-            className='plausible-event-name=Navigation Link:+Click'
+            className='plausible-event-name=Navigation+Link:+Click'
             href='#projects'
             aria-label='projects navigation link'
           >
