@@ -123,7 +123,7 @@ export default function Index() {
                   </Link>
                   <Link
                     className='flex items-center gap-2'
-                    href='https://crepuscolo.silvankohler.com'
+                    href='https://crepuscolo.silvankohler.swiss'
                     aria-label='personal knowledge management link'
                   >
                     <PKMIcon className='w-5 h-5' />
@@ -131,7 +131,7 @@ export default function Index() {
                   </Link>
                   <Link
                     className='flex items-center gap-2'
-                    href='https://health.silvankohler.com'
+                    href='https://health.silvankohler.swiss'
                     aria-label='health link'
                   >
                     <HealthIcon className='w-5 h-5' />
@@ -182,14 +182,14 @@ export default function Index() {
             LinkedIn
           </Link>
           <Link
-            href='https://crepuscolo.silvankohler.com'
+            href='https://crepuscolo.silvankohler.swiss'
             aria-label='personal knowledge management link'
             className='text-xs'
           >
             PKM
           </Link>
           <Link
-            href='https://health.silvankohler.com'
+            href='https://health.silvankohler.swiss'
             aria-label='health link'
             className='text-xs'
           >
@@ -223,7 +223,7 @@ function ProjectSection(props: HTMLMotionProps<'section'>) {
             title='Health'
             description='Monitoring my essential health indicators, including glucose levels, heart rate, SpO2 and respiration rate.'
             github='https://github.com/orthizar/health'
-            website='https://health.silvankohler.com'
+            website='https://health.silvankohler.swiss'
           />
           <ProjectCard
             title='Evolution'

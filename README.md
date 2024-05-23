@@ -40,7 +40,7 @@ This collection primarily consists of experiments and ongoing projects. To help 
   <br><br>
   _Health of Silvan Kohler_
   <br><br>
-  Visit [health.silvankohler.com](https://health.silvankohler.com) to monitor my essential health indicators, including glucose levels, heart rate, SpO2 (oxygen saturation), and respiration rate.
+  Visit [health.silvankohler.swiss](https://health.silvankohler.swiss) to monitor my essential health indicators, including glucose levels, heart rate, SpO2 (oxygen saturation), and respiration rate.
   This project is dedicated to promoting proactive health management and offers a public-facing API that empowers developers to create their own applications using real-time sample data for a wide range of health metrics.
   <br><br>
 - [**orthizar/evolution**](https://github.com/orthizar/evolution)
