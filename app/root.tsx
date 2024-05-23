@@ -21,11 +21,6 @@ export default function App() {
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <script
-          defer
-          data-domain='silvankohler.swiss'
-          src='https://plausible.silvankohler.swiss/js/script.tagged-events.outbound-links.js'
-        ></script>
         <Meta />
         <Links />
       </head>
