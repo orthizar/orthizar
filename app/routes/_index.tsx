@@ -4,8 +4,9 @@ import {
   SVGMotionProps,
   Variants,
   motion,
+  transform,
 } from 'framer-motion';
-import { SVGProps } from 'react';
+import { SVGProps, useEffect, useRef, useState } from 'react';
 export const meta: MetaFunction = () => {
   return [
     { title: 'Silvan Kohler' },
@@ -18,6 +19,51 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const blurRef = useRef<HTMLImageElement>(null);
+  const [blurPosition, setBlurPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateMousePosition = (e: MouseEvent) => {
+      const x = Math.max(
+        -10,
+        Math.min(
+          10,
+          (e.clientX /
+            (window.innerWidth -
+              (window.innerWidth - (blurRef.current?.x ?? 0))) -
+            1) *
+            10,
+        ),
+      );
+      const y = Math.max(
+        -10,
+        Math.min(
+          10,
+          (e.clientY /
+            (window.innerHeight -
+              (window.innerHeight - (blurRef.current?.y ?? 0) / 2) +
+              (blurRef.current?.height ?? 0) / 2) -
+            1) *
+            10,
+        ),
+      );
+      const len = Math.sqrt(x * x + y * y);
+      setBlurPosition({
+        x: x / len,
+        y: y / len,
+      });
+      // console.log(blurRef.current?.x ?? 0, e.clientX, window.innerWidth);
+      // console.log(x / len);
+      // console.log(y / len);
+    };
+
+    window.addEventListener('mousemove', updateMousePosition);
+
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition);
+    };
+  }, []);
+
   return (
     <div className='flex flex-col min-h-screen dark:bg-[#171b22]'>
       <motion.header
@@ -60,23 +106,29 @@ export default function Index() {
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
               variants={pageLoadItemVariants()}
             >
-              <div className='relative mx-auto'>
+              <div className='mx-auto'>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
-                  <img
-                    className=' rounded-[100px] scale-105 absolute filter blur-xl'
+                  <motion.img
+                    ref={blurRef}
+                    className='rounded-[100px] scale-100 absolute filter blur-xl'
                     alt='Silvan Kohler'
                     width={300}
                     height={300}
                     src='/me.jpeg'
+                    animate={{
+                      x: blurPosition.x * 10,
+                      y: blurPosition.y * 10,
+                    }}
+                    transition={{ delay: 0, duration: 0 }}
                   />
                 </picture>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
                   <img
-                    className='rounded-full scale-105 shadow-cyan-400'
+                    className='rounded-full scale-[1] shadow-cyan-400'
                     alt='Silvan Kohler'
                     width={300}
                     height={300}
