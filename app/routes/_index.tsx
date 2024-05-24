@@ -19,9 +19,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col min-h-screen dark:bg-[#171b22]'>
       <motion.header
-        className='flex items-center h-16 px-4 border-b shrink-0 md:px-6 dark:bg-gray-800/40'
+        className='flex items-center h-16 px-4 border-b shrink-0 md:px-6'
         initial='initial'
         animate='animate'
         variants={pageLoadVariants(0.5, 0, 0)}
@@ -49,7 +49,7 @@ export default function Index() {
         </motion.nav>
       </motion.header>
       <motion.main
-        className='flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40'
+        className='flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10'
         initial='initial'
         animate='animate'
         variants={pageLoadVariants(1, 0.5, 1)}
@@ -60,17 +60,30 @@ export default function Index() {
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
               variants={pageLoadItemVariants()}
             >
-              <picture>
-                <source srcSet='/me.avif' type='image/avif' />
-                <source srcSet='/me.webp' type='image/webp' />
-                <img
-                  className='rounded-full mx-auto'
-                  alt='Silvan Kohler'
-                  width={300}
-                  height={300}
-                  src='/me.jpeg'
-                />
-              </picture>
+              <div className='relative mx-auto'>
+                <picture>
+                  <source srcSet='/me.avif' type='image/avif' />
+                  <source srcSet='/me.webp' type='image/webp' />
+                  <img
+                    className=' rounded-[100px] scale-105 absolute filter blur-xl'
+                    alt='Silvan Kohler'
+                    width={300}
+                    height={300}
+                    src='/me.jpeg'
+                  />
+                </picture>
+                <picture>
+                  <source srcSet='/me.avif' type='image/avif' />
+                  <source srcSet='/me.webp' type='image/webp' />
+                  <img
+                    className='rounded-full scale-105 shadow-cyan-400'
+                    alt='Silvan Kohler'
+                    width={300}
+                    height={300}
+                    src='/me.jpeg'
+                  />
+                </picture>
+              </div>
               <motion.div
                 className='flex flex-col items-start space-y-4'
                 initial='initial'
