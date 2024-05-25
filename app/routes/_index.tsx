@@ -73,7 +73,7 @@ export default function Index() {
         </motion.nav>
       </motion.header>
       <motion.main
-        className='flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10'
+        className='flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 pb-10 md:gap-8 md:p-10'
         initial='initial'
         animate='animate'
         variants={pageLoadVariants(1, 0.5, 1)}
@@ -191,7 +191,7 @@ export default function Index() {
         <ProjectSection className='z-10' variants={pageLoadItemVariants()} />
       </motion.main>
       <motion.footer
-        className='flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-gray-800/40'
+        className='flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-[#171b22]'
         initial='initial'
         animate='animate'
         variants={pageLoadVariants(0.5, 0, 0)}
