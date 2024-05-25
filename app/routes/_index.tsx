@@ -87,7 +87,10 @@ export default function Index() {
               {!isMobile && (
                 <ClientOnly>
                   {() => (
-                    <Blur className='absolute' blurPosition={blurPosition} />
+                    <Blur
+                      className='absolute blur-sm'
+                      blurPosition={blurPosition}
+                    />
                   )}
                 </ClientOnly>
               )}

@@ -31,7 +31,7 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
 
   const width = 300;
   const height = 300;
-  const ttl = () => p5.random(1000, 10000);
+  const ttl = () => p5.random(2000, 5000);
   let blurPosition = p5.createVector(0, 0);
   let canvasPosition = p5.createVector(0, 0);
   let offset = p5.createVector(0, 0);
@@ -73,6 +73,7 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
         }
       }
     });
+    p5.noStroke();
   };
 
   p5.mouseMoved = (event: MouseEvent) => {
@@ -95,7 +96,7 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
       const force = velocity
         .copy()
         .normalize()
-        .mult(1000 / (distance + 1))
+        .mult(1200 / (distance + 1))
         .mult(delta);
       particle.velocity.add(force);
     }
@@ -127,7 +128,6 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
     // const fps = p5.frameRate();
     // console.log('FPS: ' + fps.toFixed(2));
     p5.background(0, 0);
-    p5.noStroke();
     for (const particle of particles) {
       particle.timeToLive -= p5.deltaTime;
       if (particle.timeToLive <= 0) {
