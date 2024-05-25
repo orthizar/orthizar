@@ -29,8 +29,10 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
   const particles: Particle[] = [];
   p5.disableFriendlyErrors = true; // disables FES
 
-  const width = 300;
-  const height = 300;
+  const width = 400;
+  const height = 400;
+  const imgWidth = 300;
+  const imgHeight = 300;
   const ttl = () => p5.random(2000, 7000);
   const randomVelocity = () =>
     p5.createVector(p5.random(0, 15), p5.random(0, 15));
@@ -52,14 +54,14 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
           // skip if pixel is in radius of img.width/2
           if (
             p5.dist(x, y, img.width / 2, img.height / 2) < img.width / 2 || // inner circle
-            p5.dist(x, y, img.width / 2, img.height / 2) > img.width / 2 + 40 // outer circle
+            p5.dist(x, y, img.width / 2, img.height / 2) > img.width / 2 + 20 // outer circle
           ) {
             continue;
           }
           const color = p5.color(img.get(x, y));
           const position = p5.createVector(
-            p5.map(x, 0, img.width, -width / 2, width / 2),
-            p5.map(y, 0, img.height, -height / 2, height / 2),
+            p5.map(x, 0, img.width, -imgWidth / 2, imgWidth / 2),
+            p5.map(y, 0, img.height, -imgHeight / 2, imgHeight / 2),
           );
           const velocity = position.copy().normalize().mult(randomVelocity());
           particles.push({
