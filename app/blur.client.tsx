@@ -31,7 +31,9 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
 
   const width = 300;
   const height = 300;
-  const ttl = () => p5.random(2000, 5000);
+  const ttl = () => p5.random(2000, 7000);
+  const randomVelocity = () =>
+    p5.createVector(p5.random(0, 15), p5.random(0, 15));
   let blurPosition = p5.createVector(0, 0);
   let canvasPosition = p5.createVector(0, 0);
   let offset = p5.createVector(0, 0);
@@ -59,10 +61,7 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
             p5.map(x, 0, img.width, -width / 2, width / 2),
             p5.map(y, 0, img.height, -height / 2, height / 2),
           );
-          const velocity = position
-            .copy()
-            .normalize()
-            .mult(p5.createVector(p5.random(0, 10), p5.random(0, 10)));
+          const velocity = position.copy().normalize().mult(randomVelocity());
           particles.push({
             originPosition: position.copy(),
             position,
@@ -123,6 +122,7 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
     imageOffset = offset.copy().sub(canvasPosition);
   };
 
+  let step = 0;
   p5.draw = () => {
     const delta = p5.deltaTime / 1000;
     // const fps = p5.frameRate();
@@ -135,11 +135,15 @@ const sketch: Sketch = (p5: P5CanvasInstance) => {
         particle.velocity = particle.position
           .copy()
           .normalize()
-          .mult(p5.createVector(p5.random(0, 10), p5.random(0, 10)));
+          .mult(randomVelocity());
         particle.timeToLive = ttl();
       }
       // air resistance
       particle.velocity.mult(1 - 0.01 * delta);
+
+      // random angle change
+      step += 0.01;
+      particle.velocity.rotate(p5.noise(step) * delta * 0.1);
 
       p5.fill(particle.color);
 
