@@ -4,9 +4,12 @@ import {
   SVGMotionProps,
   Variants,
   motion,
-  transform,
 } from 'framer-motion';
 import { SVGProps, useEffect, useRef, useState } from 'react';
+import { ClientOnly } from 'remix-utils/client-only';
+import Blur from 'app/blur.client';
+import { isMobile } from 'react-device-detect';
+
 export const meta: MetaFunction = () => {
   return [
     { title: 'Silvan Kohler' },
@@ -23,44 +26,19 @@ export default function Index() {
   const [blurPosition, setBlurPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      const x = Math.max(
-        -10,
-        Math.min(
-          10,
-          (e.clientX /
-            (window.innerWidth -
-              (window.innerWidth - (blurRef.current?.x ?? 0))) -
-            1) *
-            10,
-        ),
-      );
-      const y = Math.max(
-        -10,
-        Math.min(
-          10,
-          (e.clientY /
-            (window.innerHeight -
-              (window.innerHeight - (blurRef.current?.y ?? 0) / 2) +
-              (blurRef.current?.height ?? 0) / 2) -
-            1) *
-            10,
-        ),
-      );
-      const len = Math.sqrt(x * x + y * y);
+    const updateBlurPosition = () => {
       setBlurPosition({
-        x: x / len,
-        y: y / len,
+        x: (blurRef.current?.x ?? 0) / 2 + (blurRef.current?.width ?? 0) / 2,
+        y: (blurRef.current?.y ?? 0) / 2 + (blurRef.current?.height ?? 0) / 2,
       });
-      // console.log(blurRef.current?.x ?? 0, e.clientX, window.innerWidth);
-      // console.log(x / len);
-      // console.log(y / len);
     };
-
-    window.addEventListener('mousemove', updateMousePosition);
-
+    window.addEventListener('scroll', updateBlurPosition);
+    window.addEventListener('resize', updateBlurPosition);
+    updateBlurPosition();
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      // window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('scroll', updateBlurPosition);
+      window.removeEventListener('resize', updateBlurPosition);
     };
   }, []);
 
@@ -100,34 +78,37 @@ export default function Index() {
         animate='animate'
         variants={pageLoadVariants(1, 0.5, 1)}
       >
-        <section className='w-full py-12 md:py-24 lg:py-32'>
+        <section className='w-full z-10'>
           <div className='px-4 md:px-6 space-y-10 xl:space-y-16'>
             <motion.div
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
               variants={pageLoadItemVariants()}
             >
-              <div className='mx-auto'>
+              {!isMobile && (
+                <ClientOnly>
+                  {() => (
+                    <Blur className='absolute' blurPosition={blurPosition} />
+                  )}
+                </ClientOnly>
+              )}
+              <div className='relative py-12 md:py-24 lg:py-32 mx-auto'>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
                   <motion.img
                     ref={blurRef}
-                    className='rounded-[100px] scale-100 absolute filter blur-xl'
+                    className='rounded-[100px] absolute filter blur-lg'
                     alt='Silvan Kohler'
                     width={300}
                     height={300}
                     src='/me.jpeg'
-                    animate={{
-                      x: blurPosition.x * 10,
-                      y: blurPosition.y * 10,
-                    }}
-                    transition={{ delay: 0, duration: 0 }}
                   />
                 </picture>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
                   <img
+                    ref={blurRef}
                     className='rounded-full scale-[1] shadow-cyan-400'
                     alt='Silvan Kohler'
                     width={300}
@@ -137,7 +118,7 @@ export default function Index() {
                 </picture>
               </div>
               <motion.div
-                className='flex flex-col items-start space-y-4'
+                className='flex flex-col items-start space-y-4 py-12 md:py-24 lg:py-32'
                 initial='initial'
                 animate='animate'
                 variants={pageLoadVariants(0.5, 0.5, 0.3)}
@@ -207,7 +188,7 @@ export default function Index() {
             </motion.div>
           </div>
         </section>
-        <ProjectSection variants={pageLoadItemVariants()} />
+        <ProjectSection className='z-10' variants={pageLoadItemVariants()} />
       </motion.main>
       <motion.footer
         className='flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dark:bg-gray-800/40'
