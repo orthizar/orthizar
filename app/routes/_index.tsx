@@ -88,7 +88,7 @@ export default function Index() {
                 <ClientOnly>
                   {() => (
                     <Blur
-                      className='absolute blur-sm'
+                      className='absolute blur-sm top-0 left-0'
                       blurPosition={blurPosition}
                     />
                   )}
