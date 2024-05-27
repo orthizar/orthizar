@@ -27,6 +27,11 @@ export default function Index() {
 
   useEffect(() => {
     const updateBlurPosition = () => {
+      // console.debug(
+      //   'updateBlurPosition',
+      //   (blurRef.current?.x ?? 0) / 2 + (blurRef.current?.width ?? 0) / 2,
+      //   (blurRef.current?.y ?? 0) / 2 + (blurRef.current?.height ?? 0) / 2,
+      // );
       setBlurPosition({
         x: (blurRef.current?.x ?? 0) / 2 + (blurRef.current?.width ?? 0) / 2,
         y: (blurRef.current?.y ?? 0) / 2 + (blurRef.current?.height ?? 0) / 2,
@@ -36,11 +41,10 @@ export default function Index() {
     window.addEventListener('resize', updateBlurPosition);
     updateBlurPosition();
     return () => {
-      // window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('scroll', updateBlurPosition);
       window.removeEventListener('resize', updateBlurPosition);
     };
-  }, []);
+  }, [blurRef]);
 
   return (
     <div className='flex flex-col min-h-screen dark:bg-[#171b22]'>
@@ -88,7 +92,7 @@ export default function Index() {
                 <ClientOnly>
                   {() => (
                     <Blur
-                      className='absolute blur-sm top-0 left-0'
+                      className='absolute -z-10 blur-sm top-0 left-0'
                       blurPosition={blurPosition}
                     />
                   )}
