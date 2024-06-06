@@ -2,21 +2,13 @@
   Welcome!
 </h2>
 <p align="center">
+  
+<img src="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&theme=holi&hide_border=true&card_width=495" />
+<br>
+<img src="https://github-readme-stats-orthizar.vercel.app/api/wakatime?username=orthizar&api_domain=wakapi.dev&hide_title=true&theme=holi&hide_border=true&langs_count=10" />
 
 </p>
-<p align="center">
-  <picture>
-    <source
-      srcset="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&hide_title=true&show_icons=true&theme=dark"
-      media="(prefers-color-scheme: dark)"
-    />
-    <source
-      srcset="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&hide_title=true&show_icons=true"
-      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-    />
-    <img src="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&show_icons=true" />
-  </picture>
-</p>
+
 <p align="center">
 Recognizing the importance of environmental sustainability, I have chosen to <a href="https://ecologi.com/orthizar">support</a> reputable organizations and projects dedicated to planting trees.
 </p>
