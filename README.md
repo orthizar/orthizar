@@ -1,6 +1,24 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
 <h2 align="center">
   Welcome!
 </h2>
+
+<br>
+<a style="color: inherit;" href="https://shiper.app">
+<div style="display: flex; gap: 0.5rem; align-items: center;">
+  <img src="public/shiper_grad.svg" width=50/>
+  <span style="font-family: 'Plus Jakarta Sans'; font-size: 1.875rem; line-height: 2.25rem;">
+    Shiper
+  </span>
+  <span style="font-family: 'Plus Jakarta Sans'; font-size: 1.25rem; line-height: 1.75rem;">
+  - Deployments for developers that want to move fast.
+</span>
+</div>
+</a>
+<br>
 <p align="center">
   
 <img src="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&theme=holi&hide_border=true&card_width=495" />
