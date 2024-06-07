@@ -3,7 +3,9 @@
 </h2>
 
 <br>
-<img src="shiper-banner.png">
+<a href="https://shiper.app">
+  <img src="shiper-banner.png">
+</a>
 <br>
 
 <p align="center">
