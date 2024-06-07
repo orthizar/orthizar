@@ -3,7 +3,7 @@
 </h2>
 
 <br>
-<img src="shiper-banner.svg" >
+<img src="shiper-banner.png">
 <br>
 
 <p align="center">
