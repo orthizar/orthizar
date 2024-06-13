@@ -5,10 +5,7 @@ import {
   Variants,
   motion,
 } from 'framer-motion';
-import { SVGProps, useEffect, useRef, useState } from 'react';
-import { ClientOnly } from 'remix-utils/client-only';
-import Blur from 'app/blur.client';
-import { isMobile } from 'react-device-detect';
+import { SVGProps } from 'react';
 
 export const meta: MetaFunction = () => {
   return [
@@ -22,30 +19,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const blurRef = useRef<HTMLImageElement>(null);
-  const [blurPosition, setBlurPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const updateBlurPosition = () => {
-      // console.debug(
-      //   'updateBlurPosition',
-      //   (blurRef.current?.x ?? 0) / 2 + (blurRef.current?.width ?? 0) / 2,
-      //   (blurRef.current?.y ?? 0) / 2 + (blurRef.current?.height ?? 0) / 2,
-      // );
-      setBlurPosition({
-        x: (blurRef.current?.x ?? 0) / 2 + (blurRef.current?.width ?? 0) / 2,
-        y: (blurRef.current?.y ?? 0) / 2 + (blurRef.current?.height ?? 0) / 2,
-      });
-    };
-    window.addEventListener('scroll', updateBlurPosition);
-    window.addEventListener('resize', updateBlurPosition);
-    updateBlurPosition();
-    return () => {
-      window.removeEventListener('scroll', updateBlurPosition);
-      window.removeEventListener('resize', updateBlurPosition);
-    };
-  }, [blurRef]);
-
   return (
     <div className='flex flex-col min-h-screen dark:bg-[#171b22]'>
       <motion.header
@@ -88,22 +61,11 @@ export default function Index() {
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
               variants={pageLoadItemVariants()}
             >
-              {!isMobile && (
-                <ClientOnly>
-                  {() => (
-                    <Blur
-                      className='absolute -z-10 blur-sm top-0 left-0'
-                      blurPosition={blurPosition}
-                    />
-                  )}
-                </ClientOnly>
-              )}
               <div className='relative py-12 md:py-24 lg:py-32 mx-auto'>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
                   <motion.img
-                    ref={blurRef}
                     className='rounded-[100px] absolute filter blur-lg'
                     alt='Silvan Kohler'
                     width={300}
@@ -115,7 +77,6 @@ export default function Index() {
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
                   <img
-                    ref={blurRef}
                     className='rounded-full scale-[1] shadow-cyan-400'
                     alt='Silvan Kohler'
                     width={300}
