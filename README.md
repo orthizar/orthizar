@@ -13,7 +13,7 @@
   
 <img src="https://github-readme-stats-orthizar.vercel.app/api?username=orthizar&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&theme=holi&hide_border=true&card_width=495" />
 <br>
-<img src="https://github-readme-stats-orthizar.vercel.app/api/wakatime?username=orthizar&api_domain=wakapi.dev&hide_title=true&theme=holi&hide_border=true&langs_count=5" />
+<img src="https://github-readme-stats-orthizar.vercel.app/api/wakatime?username=orthizar&api_domain=wakapi.dev&hide_title=true&theme=holi&hide_border=true&langs_count=10" />
 
 </p>
 
