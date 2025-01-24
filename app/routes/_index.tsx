@@ -22,7 +22,7 @@ export default function Index() {
   return (
     <div className='flex flex-col min-h-screen dark:bg-[#171b22]'>
       <motion.header
-        className='flex items-center h-16 px-4 border-b shrink-0 md:px-6'
+        className='flex items-center h-16 px-4 shrink-0 md:px-6'
         initial='initial'
         animate='animate'
         variants={pageLoadVariants(0.5, 0, 0)}
@@ -36,18 +36,6 @@ export default function Index() {
           <SignatureIcon className='h-20 w-auto mr-2' />
           <span className='sr-only'>Silvan Kohler</span>
         </motion.a>
-        <motion.nav
-          className='ml-auto flex gap-4 sm:gap-6'
-          variants={pageLoadItemVariants()}
-        >
-          <Link
-            className='plausible-event-name=Navigation+Link:+Click'
-            href='#projects'
-            aria-label='projects navigation link'
-          >
-            Projects
-          </Link>
-        </motion.nav>
       </motion.header>
       <motion.main
         className='flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 pb-10 md:gap-8 md:p-10'
@@ -61,7 +49,7 @@ export default function Index() {
               className='grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16'
               variants={pageLoadItemVariants()}
             >
-              <div className='relative py-12 md:py-24 lg:py-32 mx-auto'>
+              <div className='relative my-auto mx-auto'>
                 <picture>
                   <source srcSet='/me.avif' type='image/avif' />
                   <source srcSet='/me.webp' type='image/webp' />
@@ -95,7 +83,7 @@ export default function Index() {
                   className='max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'
                   variants={pageLoadItemVariants()}
                 >
-                  I&apos;m Silvan Kohler, a developer, systems engineer and IT
+                  I&apos;m Silvan Kohler, a developer, system engineer and IT
                   enthusiast based in Switzerland. I&apos;m passionate about
                   technology and love to build things. Currently building
                   shiper.
@@ -135,22 +123,6 @@ export default function Index() {
                     <LinkedinIcon className='w-5 h-5' />
                     <span>LinkedIn</span>
                   </Link>
-                  <Link
-                    className='flex items-center gap-2'
-                    href='https://crepuscolo.silvankohler.swiss'
-                    aria-label='personal knowledge management link'
-                  >
-                    <PKMIcon className='w-5 h-5' />
-                    <span>PKM</span>
-                  </Link>
-                  <Link
-                    className='flex items-center gap-2'
-                    href='https://health.silvankohler.swiss'
-                    aria-label='health link'
-                  >
-                    <HealthIcon className='w-5 h-5' />
-                    <span>Health</span>
-                  </Link>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -168,7 +140,7 @@ export default function Index() {
           className='text-xs dark:text-gray-400'
           variants={pageLoadItemVariants()}
         >
-          © 2024 Silvan Kohler. All rights reserved.
+          © 2025 Silvan Kohler. All rights reserved.
         </motion.p>
         <motion.nav
           className='sm:ml-auto flex gap-4 sm:gap-6'
@@ -195,20 +167,6 @@ export default function Index() {
           >
             LinkedIn
           </Link>
-          <Link
-            href='https://crepuscolo.silvankohler.swiss'
-            aria-label='personal knowledge management link'
-            className='text-xs'
-          >
-            PKM
-          </Link>
-          <Link
-            href='https://health.silvankohler.swiss'
-            aria-label='health link'
-            className='text-xs'
-          >
-            Health
-          </Link>
         </motion.nav>
       </motion.footer>
     </div>
@@ -234,10 +192,10 @@ function ProjectSection(props: HTMLMotionProps<'section'>) {
             website='https://shiper.app'
           />
           <ProjectCard
-            title='Health'
-            description='Monitoring my essential health indicators, including glucose levels, heart rate, SpO2 and respiration rate.'
-            github='https://github.com/orthizar/health'
-            website='https://health.silvankohler.swiss'
+            title='ClubSeats'
+            description='Seat reservation and box office system for clubs and events.'
+            icon='/clubseats.svg'
+            website='https://seats.club'
           />
           <ProjectCard
             title='Evolution'
